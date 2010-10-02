@@ -9,7 +9,7 @@ describe Newsrc do
     }.to raise_error(ArgumentError, "The file supplied can't be read")
   end
 
-  let(:newsrc) { Newsrc.new('spec/newsrc') }
+  let(:newsrc) { Newsrc.new(File.join File.dirname(__FILE__), "newsrc") }
   
   it "should list a subscribed group" do
     newsrc.list.should match(/^comp\.lang\.ruby$/)
